@@ -10,4 +10,6 @@ https://blog.csdn.net/winter_chen001/article/details/77249029
 
 2.关于Mybatis的集成，配置，参考博客：
 
+https://blog.csdn.net/lettuce_/article/details/101375865
+
 https://blog.csdn.net/chengqiuming/article/details/84033510
