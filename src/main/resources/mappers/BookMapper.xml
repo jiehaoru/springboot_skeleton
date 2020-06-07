@@ -7,29 +7,29 @@
     <result column="book_number" property="bookNumber" jdbcType="INTEGER" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from book
+    delete from t_book
     where book_id = #{bookId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.jhr.dao.po.Book" >
     <selectKey resultType="java.lang.Integer" keyProperty="bookId" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into book (book_name, book_number)
+    insert into t_book (book_name, book_number)
     values (#{bookName,jdbcType=VARCHAR}, #{bookNumber,jdbcType=INTEGER})
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.jhr.dao.po.Book" >
-    update book
+    update t_book
     set book_name = #{bookName,jdbcType=VARCHAR},
       book_number = #{bookNumber,jdbcType=INTEGER}
     where book_id = #{bookId,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select book_id, book_name, book_number
-    from book
+    from t_book
     where book_id = #{bookId,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select book_id, book_name, book_number
-    from book
+    from t_book
   </select>
 </mapper>
